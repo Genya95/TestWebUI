@@ -1,20 +1,46 @@
 package org.example.lesson5;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.By;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
-import java.util.List;
-import java.util.concurrent.TimeUnit;
 
-public class Main {
-    public static WebDriver driver;
-    public static final String CRM_URL = "https://crm.geekbrains.space";
+public class LoginPage extends BaseClass {
 
-    public static void main(String[] args) throws InterruptedException {
+
+    @FindBy(id = "prependedInput")
+    private WebElement prependedInput;
+
+    @FindBy(id = "prependedInput2")
+    private WebElement prependedInput2;
+
+    @FindBy(id = "_submit")
+    private WebElement submit;
+
+    public LoginPage(WebDriver driver) {
+        this.driver = driver;
+        PageFactory.initElements(driver, this);
+    }
+
+    public LoginPage addLogin(String login) {
+        prependedInput.sendKeys(login);
+        return this;
+    }
+
+    public LoginPage addPass(String pass) {
+        prependedInput2.sendKeys(pass);
+        return this;
+    }
+
+    public LoginPage submitClick() {
+        submit.click();
+        return this;
+    }
+}
+
+    /*public static void main(String[] args) throws InterruptedException {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
@@ -27,12 +53,6 @@ public class Main {
         createContact();
         driver.quit();
 
-    }
-
-    public static void login() {
-        driver.findElement(By.id("prependedInput")).sendKeys("Applanatest1");
-        driver.findElement(By.id("prependedInput2")).sendKeys("Student2020!");
-        driver.findElement(By.id("_submit")).click();
     }
 
     public static void businessAgreementCreation() throws InterruptedException {
@@ -67,3 +87,4 @@ public class Main {
     }
 }
 
+*/
