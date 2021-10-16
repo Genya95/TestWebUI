@@ -1,6 +1,7 @@
 package org.example.lesson5;
 
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -8,6 +9,7 @@ import org.openqa.selenium.WebElement;
 
 public class BusinessAgreementCreationTests extends BaseClassTest {
 
+    @DisplayName("Вход на сайт crm.geekbrains")
     @Test
     public void LoginTest() {
         driver.get(CRM_URL);
@@ -20,6 +22,7 @@ public class BusinessAgreementCreationTests extends BaseClassTest {
         driver.quit();
     }
 
+    @DisplayName("Переход на страницу создания нового договора")
     @Test
     public void CreateNewContractTest() throws InterruptedException {
         driver.get(CRM_URL);
@@ -33,6 +36,7 @@ public class BusinessAgreementCreationTests extends BaseClassTest {
         driver.quit();
     }
 
+    @DisplayName("Создание нового договора")
     @Test
     public void FillInNewContractTest() throws InterruptedException {
         driver.get(CRM_URL);
@@ -59,6 +63,7 @@ public class BusinessAgreementCreationTests extends BaseClassTest {
     @Test
     public void CreateNewContactTest() throws InterruptedException {
         driver.get(CRM_URL);
+
         LoginPage page = new LoginPage(driver)
                 .addLogin("Applanatest1")
                 .addPass("Student2020!")
@@ -70,6 +75,7 @@ public class BusinessAgreementCreationTests extends BaseClassTest {
         driver.quit();
     }
 
+    @DisplayName("Переход на страницу создания нового контактного лица")
     @Test
     public void NewContactPageTest() throws InterruptedException {
         driver.get(CRM_URL);
@@ -83,6 +89,7 @@ public class BusinessAgreementCreationTests extends BaseClassTest {
         driver.quit();
     }
 
+    @DisplayName("Создание нового контактного лица")
     @Test
     public void FillInNewContactTest() throws InterruptedException {
         driver.get(CRM_URL);

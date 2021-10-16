@@ -1,0 +1,7 @@
+-------------------------------------------------------------------------------
+Test set: org.example.lesson4.TriangleAreaTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 1.911 s <<< FAILURE! - in org.example.lesson4.TriangleAreaTests
+isRight{double, double, double}  Time elapsed: 1.91 s  <<< ERROR!
+org.junit.jupiter.api.extension.ParameterResolutionException: No ParameterResolver registered for parameter [double arg0] in method [public void org.example.lesson4.TriangleAreaTests.isRight(double,double,double)].
+
